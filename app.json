@@ -22,7 +22,5 @@
     },
     "CAPTION": {
       "description": "Add your caption text",
-      "value": "", 
-    }
-  }
+      "value": ""
 }
