@@ -1,5 +1,4 @@
 {
-
   "name": "ChannelAutoCaption",
   "description": "Telegram auto channel caption bot.",
   "keywords": [
@@ -7,25 +6,23 @@
     "auto",
     "caption" 
   ],
-  "repository": "https://github.com/samadii/ChannelAutoCaption"
+  "repository": "https://github.com/samadii/ChannelAutoCaption",
   "env": {
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
-      "required": true
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
       "value": ""
-      "required": true
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
       "value": ""
-      "required": true
     },
     "CAPTION": {
       "description": "Add your caption text",
       "value": "", 
-      "required": true
     }
+  }
+}
