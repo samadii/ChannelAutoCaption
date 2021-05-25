@@ -1,6 +1,13 @@
 # Channel Auto Caption 
 
-This bot can add a caption for any media file sent to a channel. Just edit this [plugin](https://github.com/ImJanindu/channel-caption-bot/blob/main/plugins/caption.py) as you wish, then deploy bot and add bot as admin to a channel.
+This bot can add a caption for any media file sent to a channel. Just deploy bot and add bot as admin to a channel.
+
+
+
+## Deploy to Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/samadii/ChannelAutoCaption)
+
 
 ### Devs: 
 - [@samadii](https://github.com/samadii)
