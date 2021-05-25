@@ -1,6 +1,6 @@
 # Channel Auto Caption 
 
-This bot can add a caption for any media file sent to a channel. Just deploy bot and add bot as admin to a channel.
+This bot can add a caption for any media/document sent to a channel. Just deploy bot and add bot as admin to a channel.
 
 
 
