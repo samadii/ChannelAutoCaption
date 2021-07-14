@@ -14,7 +14,7 @@ async def caption(client, message: Message):
     button_url = os.environ.get('BUTTON_URL')
     FILE_NAME = bool(os.environ.get('FILE_NAME', False))
     if FILE_NAME and not button_name:
-        media = message.audio or message.video or message.document
+        media = message.audio or message.video or message.document or message.animation
         if (media is not None) and (media.file_name is not None):
             _file = media.file_name
             caption = CAPTION
@@ -24,7 +24,7 @@ async def caption(client, message: Message):
         else:
             await message.edit(CAPTION)
     if FILE_NAME and button_name: 
-        media = message.audio or message.video or message.document
+        media = message.audio or message.video or message.document or message.animation
         if (media is not None) and (media.file_name is not None):
             _file = media.file_name
             caption = CAPTION
