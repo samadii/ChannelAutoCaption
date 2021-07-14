@@ -8,17 +8,26 @@
       "value": ""
     },
     "API_ID": {
-      "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "description": "Get this value from https://my.telegram.org"
     },
     "API_HASH": {
-      "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "description": "Get this value from https://my.telegram.org"
+    },
+    "BUTTON_URL": {
+      "description": "(Optional) A link for your button",
+      "required": false
+    },
+    "BUTTON_NAME": {
+      "description": "(Optional) A name for your button",
+      "required": false
     },
     "CAPTION": {
-      "description": "Add your caption text",
-      "value": ""
-}
+      "description": "Add your caption text"
+    },
+    "FILE_NAME": {
+      "description": "(Optional) Set this to ANYTHING if you want the filename of the medias be added in the first line of your caption",
+      "required": false
+}   
   },
   "buildpacks": [
     {
