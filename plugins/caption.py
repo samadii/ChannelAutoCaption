@@ -7,6 +7,51 @@ from pyrogram.errors import FloodWait
 
 CAPTION=Config.CAPTION
 
-@Client.on_message(filters.media & filters.channel)
+
+@Client.on_message(filters.channel & filters.media)
 async def caption(client, message: Message):
-    await message.edit(CAPTION)
+    button_name = os.environ.get('BUTTON_NAME')
+    button_url = os.environ.get('BUTTON_URL')
+    FILE_NAME = bool(os.environ.get('FILE_NAME', False))
+    if FILE_NAME and not button_name:
+        media = message.audio or message.video or message.document
+        if (media is not None) and (media.file_name is not None):
+            _file = media.file_name
+            caption = CAPTION
+            await message.edit(
+                f"**{_file}**\n\n"
+                f"{caption}")
+        else:
+            await message.edit(CAPTION)
+    if FILE_NAME and button_name: 
+        media = message.audio or message.video or message.document
+        if (media is not None) and (media.file_name is not None):
+            _file = media.file_name
+            caption = CAPTION
+            await message.edit(
+                f"**{_file}**\n\n"
+                f"{caption}",
+                  reply_markup=InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton(button_name, url=f"{button_url}")]
+                ]
+                                               )
+                          )
+        else:
+            await message.edit(CAPTION,
+                  reply_markup=InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton(button_name, url=f"{button_url}")]
+                ]
+                                               )
+                          )
+    if button_name and not FILE_NAME:
+        await message.edit(CAPTION,
+              reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton(button_name, url=f"{button_url}")]
+            ]
+                                           )
+                      )
+    if not button_name and not FILE_NAME:
+        await message.edit(CAPTION)
