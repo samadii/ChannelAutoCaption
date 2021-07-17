@@ -3,7 +3,7 @@
   "description": "Telegram auto channel caption bot.",
   "repository": "https://github.com/samadii/ChannelAutoCaption",
   "env": {
-    "TG_BOT_TOKEN": {
+    "BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
     },
@@ -14,11 +14,11 @@
       "description": "Get this value from https://my.telegram.org"
     },
     "BUTTON_URL": {
-      "description": "(Optional) A link for your button",
+      "description": "(Optional) Add a link for your button if you want add an inline button to your messages",
       "required": false
     },
     "BUTTON_NAME": {
-      "description": "(Optional) A name for your button",
+      "description": "(Optional) Add a name for your button if you want add an inline button to your messages",
       "required": false
     },
     "CAPTION": {
