@@ -17,7 +17,7 @@ async def caption(client, message: Message):
         media = message.audio or message.video or message.document or message.animation
         if (media is not None) and (media.file_name is not None):
             file = media.file_name
-            _file = file.replace("-", " ").replace("_", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".mp3", " ").replace(".zip", " ")
+            _file = file.replace("-", " ").replace("_", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
             caption = CAPTION
             await message.edit(
                 f"{_file}\n\n"
@@ -28,7 +28,7 @@ async def caption(client, message: Message):
         media = message.audio or message.video or message.document or message.animation
         if (media is not None) and (media.file_name is not None):
             file = media.file_name
-            _file = file.replace("-", " ").replace("_", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".mp3", " ").replace(".zip", " ")
+            _file = file.replace("-", " ").replace("_", " ").replace(".mp4", " ").replace(".mkv", " ").replace(".pdf", " ").replace(".apk", " ").replace(".mp3", " ").replace(".zip", " ")
             caption = CAPTION
             await message.edit(
                 f"{_file}\n\n"
