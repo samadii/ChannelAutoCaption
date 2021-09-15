@@ -1,8 +1,6 @@
 # Channel Auto Caption 
 
-This bot automatically add caption and button to any media/document sent to a channel. Just deploy bot and add bot as admin to a channel.
-
-
+This bot automatically add caption and button to any media/document sent to a channel.
 
 ## Deploy to Heroku
 
