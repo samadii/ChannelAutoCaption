@@ -4,6 +4,7 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 import asyncio
+import datetime
 from pyrogram import filters
 from bot import autocaption
 from config import Config
@@ -78,11 +79,11 @@ async def editing(bot, message):
             channel = str(message.chat.id).replace('-100', '')
             cap = await get_caption(int(channel))
             if message.audio:
-                caption = cap.caption.replace("{filename}", f"{m.file_name}").replace("{artist}", f"{m.performer}").replace("{title}", f"{m.title}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
+                caption = cap.caption.replace("{duration}", str(datetime.timedelta(seconds = m.duration))).replace("{mime_type}", f"{m.mime_type}").replace("{filename}", f"{m.file_name}").replace("{artist}", f"{m.performer}").replace("{title}", f"{m.title}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
             elif message.video:
-                caption = cap.caption.replace("{filename}", f"{m.file_name}").replace("{width}", f"{str(m.width)}").replace("{height}", f"{str(m.height)}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
+                caption = cap.caption.replace("{duration}", str(datetime.timedelta(seconds = m.duration))).replace("{mime_type}", f"{m.mime_type}").replace("{filename}", f"{m.file_name}").replace("{width}", f"{str(m.width)}").replace("{height}", f"{str(m.height)}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
             elif message.document:
-                caption = cap.caption.replace("{filename}", f"{m.file_name}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
+                caption = cap.caption.replace("{mime_type}", f"{m.mime_type}").replace("{filename}", f"{m.file_name}").replace("{ext}", f".{m.file_name.rsplit('.', 1)[1]}")
         except:
             caption = None
             pass
