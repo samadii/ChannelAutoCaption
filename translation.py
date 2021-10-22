@@ -6,23 +6,28 @@ class Translation(object):
 I am Channel Auto Caption bot.
 I can automatically add pre-setted caption and button to the files.
 You can also use Markdown styles, supported Dynamic variables in seting caption (Details in below buttons).
+
 • Commands
 - /set_cap To Set Caption
 - /set_btn To Set Button
 - /rmv_cap To Remove Caption
 - /rmv_btn To Remove Button
+
 ⚠️NOTE
 ➪ Before seting, ensure that bot is admin in your channel with editing permission.
 """    
       DYNAMIC_TEXT = """
 🔰 <u>About Dynamic</u>
 - You can add {variable_name} in caption, bot will replace these variables by its value according to file.
+
   Example: Title: {filename}
+
   Supported variables:
-  filename, ext
+  filename, ext, mime_type
+
   Additional variables:
-  For video files: width, height
-  For audio files: title, artist
+  For video files: width, height, duration
+  For audio files: title, artist, duration
 """
 
 
