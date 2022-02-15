@@ -96,15 +96,24 @@ async def edit(bot, message):
         if caption is not None:
             try:
                 await bot.edit_message_caption(chat_id = message.chat.id, message_id = message.message_id, caption = caption, parse_mode = "markdown", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(Name, url=f"{Url}")]]))
+            except FloodWait as e:
+                print(f"Sleeping for {e.x}s")
+                await asyncio.sleep(e.x)
             except Exception as e:
                 print(e)
         elif caption is None:
             try:
                 await bot.edit_message_caption(chat_id = message.chat.id, message_id = message.message_id, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(Name, url=f"{Url}")]]))
+            except FloodWait as e:
+                print(f"Sleeping for {e.x}s")
+                await asyncio.sleep(e.x)
             except Exception as e:
                 print(e)
     elif (button is None) and (caption is not None):
         try:
             await bot.edit_message_caption(chat_id = message.chat.id, message_id = message.message_id, caption = caption, parse_mode = "markdown")
+        except FloodWait as e:
+            print(f"Sleeping for {e.x}s")
+            await asyncio.sleep(e.x)
         except Exception as e:
             print(e)
